@@ -1,9 +1,7 @@
 ---
-toc: true
+toc: false
 layout: post
 description: A simple and immature gender recognizer by face images.
-categories: [markdown]
+categories: [classification]
 title: Gender recognizer
 ---
-
-# A simple and immature gender recognizer by face images
