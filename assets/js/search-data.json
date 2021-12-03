@@ -1,11 +1,22 @@
 {
   
+    
+        "post0": {
+            "title": "Gender recognizer",
+            "content": "A simple and immature gender recognizer by face images .",
+            "url": "https://zhangwenxuan322.github.io/blog/markdown/2021/12/03/gender-detect.html",
+            "relUrl": "/markdown/2021/12/03/gender-detect.html",
+            "date": " • Dec 3, 2021"
+        }
+        
+    
+  
 
   
   
 
   
-      "page1": {
+      ,"page1": {
           "title": "About",
           "content": "Wenxuan Zhang’s personal blog, randomly post some random stuffs. This site is powered by fastpages . .",
           "url": "https://zhangwenxuan322.github.io/blog/about/",
