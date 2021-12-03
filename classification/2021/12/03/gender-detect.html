@@ -95,18 +95,25 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Recently I’m learning a course, <a href="https://course.fast.ai/">Practical Deep Learning for Coders</a>.
-Shout-out to <a href="https://www.fast.ai/">fast.ai</a>, they provides valuable neural nets course, resourses and dev tools.
-This gender revcognizer is a simple practice inspired by the first two lessons that i recently learned. Using <a href="https://github.com/fastai/fastai">fastai</a> library.</p>
+    <p>Recently I’m learning a course, <a href="https://course.fast.ai/">Practical Deep Learning for Coders</a>.<br />
+Shout-out to <a href="https://www.fast.ai/">fast.ai</a>, they provides valuable neural nets course, resourses and dev tools.<br />
+This gender revcognizer is a simple practice inspired by the first two lessons that i recently learned. Using <a href="https://github.com/fastai/fastai">fastai</a> library.\</p>
 
 <hr />
-<p>At fist, I used <a href="https://www.microsoft.com/en-us/bing/apis/bing-image-search-api">bing image search api collect data</a>. But when i reviewed the data, I found those images were far from my actually needs.
-What i need is human face images, but most results contain many irrelevant elements like cars, trees, comics… Some images have more than one person.
-Technically, i can use some face cropping tools pretreat data, but as a beginner, i try to experience the whole process fist.
-So i found <a href="https://www.kaggle.com/cashutosh/gender-classification-dataset">Gender Classification Dataset</a> from kaggle, and use it as my training and validation dataset.</p>
+<p>At fist, I used <a href="https://www.microsoft.com/en-us/bing/apis/bing-image-search-api">bing image search api collect data</a>. But when i reviewed the data, I found those images were far from my actually needs.<br />
+What i need is human face images, but most results contain many irrelevant elements like cars, trees, comics… Some images have more than one person.<br />
+Technically, i can use some face cropping tools pretreat data, but as a beginner, i try to experience the whole process fist.<br />
+So i found <a href="https://www.kaggle.com/cashutosh/gender-classification-dataset">Gender Classification Dataset</a> from kaggle, and use it as my training and validation dataset.\</p>
 
-<p><img src="/blog/images/face images.png" alt="face images" title="face images" /></p>
-
+<p><img src="/blog/images/face images.png" alt="face images" title="face images" />
+\</p>
+<h3 id="import-fastbook-and-fastai-library">import fastbook and fastai library</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">Uqq</span> <span class="n">fastbook</span>
+<span class="kn">import</span> <span class="nn">fastbook</span>
+<span class="kn">from</span> <span class="nn">fastbook</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fastai.vision.widgets</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div></div>
+<p>\</p>
 <h3 id="dataloader-and-data-augmentation">Dataloader and data augmentation</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">genders</span> <span class="o">=</span> <span class="n">DataBlock</span><span class="p">(</span>
     <span class="n">blocks</span><span class="o">=</span><span class="p">(</span><span class="n">ImageBlock</span><span class="p">,</span> <span class="n">CategoryBlock</span><span class="p">),</span> 
@@ -118,17 +125,17 @@ So i found <a href="https://www.kaggle.com/cashutosh/gender-classification-datas
 <span class="n">dls</span> <span class="o">=</span> <span class="n">genders</span><span class="p">.</span><span class="n">dataloaders</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="n">dls</span><span class="p">.</span><span class="n">valid</span><span class="p">.</span><span class="n">show_batch</span><span class="p">(</span><span class="n">max_n</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
-
+<p>\</p>
 <h3 id="train-model">Train model</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet18</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">)</span>
 <span class="n">learn</span><span class="p">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div></div>
-
+<p>\</p>
 <h3 id="test-model">Test model</h3>
-<p><img src="/blog/images/gender predicts.png" alt="gender predict" title="gender predict" /></p>
-
+<p><img src="/blog/images/gender predict.png" alt="gender predict" title="gender predict" />
+\</p>
 <h3 id="thoughts">Thoughts</h3>
-<p>Data collecting is more challenging than i expected, and it can actually affect my training results.
+<p>Data collecting is more challenging than i expected, and it can actually affect my training results.<br />
 Biased data could cause ethical issues.</p>
 
   </div><a class="u-url" href="/blog/classification/2021/12/03/gender-detect.html" hidden></a>
