@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Gender recognizer | random</title>
+<title>Gender recognizer | random posts from Wenxuan Zhang</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Gender recognizer" />
 <meta property="og:locale" content="en_US" />
@@ -12,7 +12,7 @@
 <meta property="og:description" content="A simple and immature gender recognizer by face images." />
 <link rel="canonical" href="https://zhangwenxuan322.github.io/blog/classification/2021/12/03/gender-detect.html" />
 <meta property="og:url" content="https://zhangwenxuan322.github.io/blog/classification/2021/12/03/gender-detect.html" />
-<meta property="og:site_name" content="random" />
+<meta property="og:site_name" content="random posts from Wenxuan Zhang" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-12-03T00:00:00-06:00" />
 <meta name="twitter:card" content="summary" />
@@ -20,7 +20,7 @@
 <script type="application/ld+json">
 {"mainEntityOfPage":{"@type":"WebPage","@id":"https://zhangwenxuan322.github.io/blog/classification/2021/12/03/gender-detect.html"},"url":"https://zhangwenxuan322.github.io/blog/classification/2021/12/03/gender-detect.html","@type":"BlogPosting","headline":"Gender recognizer","dateModified":"2021-12-03T00:00:00-06:00","datePublished":"2021-12-03T00:00:00-06:00","description":"A simple and immature gender recognizer by face images.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://zhangwenxuan322.github.io/blog/feed.xml" title="random" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://zhangwenxuan322.github.io/blog/feed.xml" title="random posts from Wenxuan Zhang" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
 <script>
@@ -55,7 +55,7 @@ window.onload = wrap_img;
 </head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">random</a><nav class="site-nav">
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">random posts from Wenxuan Zhang</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
@@ -97,23 +97,23 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <p>Recently I’m learning a course, <a href="https://course.fast.ai/">Practical Deep Learning for Coders</a>.<br />
 Shout-out to <a href="https://www.fast.ai/">fast.ai</a>, they provides valuable neural nets course, resourses and dev tools.<br />
-This gender revcognizer is a simple practice inspired by the first two lessons that i recently learned. Using <a href="https://github.com/fastai/fastai">fastai</a> library.\</p>
+This gender revcognizer is a simple practice inspired by the first two lessons that i recently learned. Using <a href="https://github.com/fastai/fastai">fastai</a> library.</p>
 
 <hr />
 <p>At fist, I used <a href="https://www.microsoft.com/en-us/bing/apis/bing-image-search-api">bing image search api collect data</a>. But when i reviewed the data, I found those images were far from my actually needs.<br />
 What i need is human face images, but most results contain many irrelevant elements like cars, trees, comics… Some images have more than one person.<br />
 Technically, i can use some face cropping tools pretreat data, but as a beginner, i try to experience the whole process fist.<br />
-So i found <a href="https://www.kaggle.com/cashutosh/gender-classification-dataset">Gender Classification Dataset</a> from kaggle, and use it as my training and validation dataset.\</p>
+So i found <a href="https://www.kaggle.com/cashutosh/gender-classification-dataset">Gender Classification Dataset</a> from kaggle, and use it as my training and validation dataset.</p>
 
-<p><img src="/blog/images/face images.png" alt="face images" title="face images" />
-\</p>
+<p><img src="/blog/images/face images.png" alt="face images" title="face images" /></p>
+
 <h3 id="import-fastbook-and-fastai-library">import fastbook and fastai library</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">Uqq</span> <span class="n">fastbook</span>
 <span class="kn">import</span> <span class="nn">fastbook</span>
 <span class="kn">from</span> <span class="nn">fastbook</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">fastai.vision.widgets</span> <span class="kn">import</span> <span class="o">*</span>
 </code></pre></div></div>
-<p>\</p>
+
 <h3 id="dataloader-and-data-augmentation">Dataloader and data augmentation</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">genders</span> <span class="o">=</span> <span class="n">DataBlock</span><span class="p">(</span>
     <span class="n">blocks</span><span class="o">=</span><span class="p">(</span><span class="n">ImageBlock</span><span class="p">,</span> <span class="n">CategoryBlock</span><span class="p">),</span> 
@@ -125,15 +125,15 @@ So i found <a href="https://www.kaggle.com/cashutosh/gender-classification-datas
 <span class="n">dls</span> <span class="o">=</span> <span class="n">genders</span><span class="p">.</span><span class="n">dataloaders</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="n">dls</span><span class="p">.</span><span class="n">valid</span><span class="p">.</span><span class="n">show_batch</span><span class="p">(</span><span class="n">max_n</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
-<p>\</p>
+
 <h3 id="train-model">Train model</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet18</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">)</span>
 <span class="n">learn</span><span class="p">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div></div>
-<p>\</p>
+
 <h3 id="test-model">Test model</h3>
-<p><img src="/blog/images/gender predict.png" alt="gender predict" title="gender predict" />
-\</p>
+<p><img src="/blog/images/gender predict.png" alt="gender predict" title="gender predict" /></p>
+
 <h3 id="thoughts">Thoughts</h3>
 <p>Data collecting is more challenging than i expected, and it can actually affect my training results.<br />
 Biased data could cause ethical issues.</p>
