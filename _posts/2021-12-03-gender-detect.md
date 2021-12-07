@@ -7,13 +7,13 @@ title: Gender recognizer
 ---
 
 Recently I'm learning a course, [Practical Deep Learning for Coders](https://course.fast.ai/).\
-Shout-out to [fast.ai](https://www.fast.ai/), they provides valuable neural nets course, resourses and dev tools.\
-This gender revcognizer is a simple practice inspired by the first two lessons that i recently learned. Using [fastai](https://github.com/fastai/fastai) library.
+Shout-out to [fast.ai](https://www.fast.ai/), they provides valuable neural nets course, resources and dev tools.\
+This gender recognizer is a simple practice inspired by the first two lessons that i recently learned. Using [fastai](https://github.com/fastai/fastai) library.
 
 ---
 At fist, I used [bing image search api collect data](https://www.microsoft.com/en-us/bing/apis/bing-image-search-api). But when i reviewed the data, I found those images were far from my actually needs.\
 What i need is human face images, but most results contain many irrelevant elements like cars, trees, comics... Some images have more than one person.\
-Technically, i can use some face cropping tools pretreat data, but as a beginner, i try to experience the whole process fist.\
+Technically, i can use some face cropping tools pre-treat data, but as a beginner, i try to experience the whole process fist.\
 So i found [Gender Classification Dataset](https://www.kaggle.com/cashutosh/gender-classification-dataset) from kaggle, and use it as my training and validation dataset.
 
 ![face images]({{ site.baseurl }}/images/face images.png "face images")
